@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-cI-WFe">
+                                <rect key="frame" x="261" y="285" width="78" height="30"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="m9v-Ke-orK" kind="show" id="zLP-KP-iZO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minesweeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJB-W0-6lM">
+                                <rect key="frame" x="249" y="166" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bOF-cI-WFe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5io-6E-eVx"/>
+                            <constraint firstItem="bOF-cI-WFe" firstAttribute="top" secondItem="ZJB-W0-6lM" secondAttribute="bottom" constant="98" id="Elw-Gp-5rP"/>
+                            <constraint firstItem="ZJB-W0-6lM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="249" id="Eo3-FM-Cmt"/>
+                            <constraint firstItem="bOF-cI-WFe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OsN-PW-vie"/>
+                            <constraint firstAttribute="trailing" secondItem="ZJB-W0-6lM" secondAttribute="trailing" constant="249" id="YE9-wx-94H"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Board View Controller-->
+        <scene sceneID="LAo-RT-38d">
+            <objects>
+                <viewController id="m9v-Ke-orK" customClass="BoardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="An2-Wb-zhy"/>
+                        <viewControllerLayoutGuide type="bottom" id="IRo-BI-5WB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="akP-lU-xCs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gqF-Vx-WIb">
+                                <rect key="frame" x="0.0" y="98" width="600" height="502"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gqF-Vx-WIb" firstAttribute="top" secondItem="An2-Wb-zhy" secondAttribute="bottom" constant="78" id="3O2-Le-az0"/>
+                            <constraint firstItem="gqF-Vx-WIb" firstAttribute="leading" secondItem="akP-lU-xCs" secondAttribute="leading" id="Axk-wc-BSM"/>
+                            <constraint firstItem="IRo-BI-5WB" firstAttribute="top" secondItem="gqF-Vx-WIb" secondAttribute="bottom" id="Tag-2q-iUT"/>
+                            <constraint firstAttribute="trailing" secondItem="gqF-Vx-WIb" secondAttribute="trailing" id="xwd-BJ-dLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainStackView" destination="gqF-Vx-WIb" id="KNa-8C-pRL"/>
+                        <segue destination="GIR-ef-ycK" kind="unwind" identifier="prepareForUnwind" unwindAction="prepareForUnwind:" id="poj-mR-BxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hro-Q8-8Sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GIR-ef-ycK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="262"/>
+        </scene>
+    </scenes>
+</document>
